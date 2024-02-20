@@ -1,0 +1,28 @@
+Body{
+  background-color: #f4f4f4;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  margin: 0;
+}
+header{
+  background-color: #333;
+  color: #FFF;
+  text-align: center;
+}
+.botao-categoria{
+  background-color: #4caf50;
+  color: #f4f4f4;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+footer{
+    height: 40px;
+    background-color: #333;
+    width: 100%;
+    color: #f4f4f4;
+    text-align: center;
+}
