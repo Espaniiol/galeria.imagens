@@ -30,3 +30,20 @@ footer{
 .active{
   background-color: #2e6d30;
 }
+
+.box-imagens {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.imagem-item {
+  margin: 10px;
+}
+
+.imagem-item img {
+  max-width: 100%;
+  
+  max-height: calc(100vh - 200px);
+}

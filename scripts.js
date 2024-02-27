@@ -10,9 +10,10 @@ $(document).ready(function(){
   function carregarImagens(categoria){
       const imagens = baseImagens[categoria];
       const boxImagens = $('body').find('.box-imagens');
+      boxImagens.empty();
       imagens.forEach(img => {
           console.log(img);
-          boxImagens.append('<div><img src="imagens/'+img+'" /></div>');
+          boxImagens.append('<div class="imagem-item"><img src="imagens/'+img+'" alt="'+img+'"/></div>');
       });
   }
 
@@ -22,5 +23,32 @@ $(document).ready(function(){
       
       const categoria = $(this).data('categoria');
       carregarImagens(categoria);
+      
     });
+
+    function sortImagens(sort){
+        const imagens = $('.box-imagens .imagem-item');
+        imagens.sort(function(a,b){
+            console.log(a);
+            const imagemA = $(a).find("img").attr('alt');
+            const imagemB = $(b).find("img").attr('alt');
+            console.log(imagemA);
+            console.log(imagemB);
+            //console.log(imagemA)
+            if (sort == 'asc'){
+                return imagemA.localeCompare(imagemB);
+            }
+            else{
+                return imagemB.localeCompare(imagemA);
+            }
+        });
+        $('body').find('.box-imagens').append(imagens);
+        //console.log(imagens);
+    }
+
+    $('body').on('click','.botao-ordenar',function(){
+        const sort = alert($(this).data('sort'));
+        sortImagens(sort);
+    });
+
 });
